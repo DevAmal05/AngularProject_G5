@@ -7,6 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
+ 
+
+  name="groupe5";
+
+  ImageURL="assets/image.jpeg";
+
+  NameList=['Fatma','Yosra','karama','Khadija'];
+
+  condition=false;
+
+  name2:any
+
+
   constructor() { }
 
   ngOnInit(): void {

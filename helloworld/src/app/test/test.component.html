@@ -1,6 +1,15 @@
-<h1>HELLO TEST</h1>
+<div *ngIf="condition">
+  <h1>HELLO TEST</h1>
+</div>
 
-<img src="assets/image.jpeg" alt="image" width="100px">
+
+<p>Hello {{name}}</p>
+<ul *ngFor="let names of NameList">
+ <li>{{names}} </li>
+</ul>
+
+
+<img [src]="ImageURL" alt="image" width="100px">
 
 <button type="button"  routerLink="/home" class="btn btn-warning">Home</button> 
 
