@@ -1,7 +1,9 @@
 <div *ngIf="condition">
   <h1>HELLO TEST</h1>
 </div>
-
+<h1>{{date | date:'medium'}}</h1>
+<p>{{250 | currency:'TND'}}</p>
+<p>{{'hello world' | uppercase}}</p>
 
 <p>Hello {{name}}</p>
 <ul *ngFor="let names of NameList">

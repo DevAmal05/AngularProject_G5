@@ -23,3 +23,8 @@ Bootstrap
 Primeng
          npm install primeng --save
          npm install primeicons --save
+
+
+Firebase
+         npm install firebase --save
+         npm install --save  @angular/fire@6

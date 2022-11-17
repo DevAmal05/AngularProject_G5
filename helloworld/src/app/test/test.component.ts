@@ -19,6 +19,8 @@ export class TestComponent implements OnInit {
 
   name2:any
 
+  date=new Date()
+
 
   constructor() { }
 
