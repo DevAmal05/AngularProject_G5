@@ -15,24 +15,27 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                 </div> 
-                                <form [formGroup]="loginform"  (ngSubmit)="login()">
+                                <form [formGroup]="loginForm" (ngSubmit)="login()" >
                                     <div class="form-group">
                                         <input type="email" formControlName="email" class="form-control form-control-user"
-                                            id="exampleInputEmail" aria-describedby="emailHelp"
+                                            id="email" aria-describedby="emailHelp"
                                             placeholder="Enter Email Address...">
- 
-                                            <div *ngIf="email.touched && email.invalid">
-                                                <small class="text-danger" *ngIf="email.errors.required">Email is Required</small>
-                                                <small class="text-danger" *ngIf="email.errors.email">Email Invalid</small>
+                                            <div *ngIf="email.touched && email.invalid" >
+
+                                                <small class="text-danger" *ngIf="email.errors.required">Email required</small>
+                                                <small class="text-danger"  *ngIf="email.errors.email">Email invalid</small>
                                             </div>
+ 
                                     </div>
                                     <div class="form-group">
                                         <input type="password" formControlName="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
-                                            <div *ngIf="password.touched && password.invalid">
-                                                <small class="text-danger" *ngIf="password.errors.required">Password is Required</small>
-                                                <small class="text-danger" *ngIf="password.errors.minlength">Password is short</small>
+                                            id="password" placeholder="Password">
+                                            <div *ngIf="password.touched && password.invalid" >
+
+                                                <small class="text-danger" *ngIf="password.errors.required">Password required</small>
+                                                <small class="text-danger"  *ngIf="password.errors.minlength">Password invalid</small>
                                             </div>
+                                         
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox small">

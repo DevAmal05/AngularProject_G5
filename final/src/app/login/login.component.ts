@@ -10,44 +10,51 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginform!:FormGroup;
-  errorMessge: any;
+ loginForm: FormGroup
+  errorMessg: any;
   constructor(private fb:FormBuilder,private authservice:AuthService,private router:Router) { }
 
   ngOnInit(): void {
-    this.initForm();
+  this.initForm()
   }
+
   initForm(){
-    this.loginform=this.fb.group({
+    this.loginForm= this.fb.group({ 
       email:new FormControl('',[
         Validators.required,
         Validators.email
       ]),
       password: new FormControl('',[
         Validators.required,
-        Validators.minLength(6)
+        Validators.minLength(5)
       ])
-    })
+  })
   }
-get email(){
-  return this.loginform.get('email')
-}
-get password(){
-  return this.loginform.get('password')
-}
 
-login(){
-  const email=this.loginform.get('email').value;
-  const password=this.loginform.get('password').value;
-  this.authservice.signInUser(email,password).then(
-    ()=>{
-      this.router.navigate(['/home'])
-    },
-    (error) =>{
-      this.errorMessge=error
-    }
-  )
+  get email(){
+    return this.loginForm.get('email')
+  }
+  get password(){
+    return this.loginForm.get('password')
+  }
 
-}
+  login(){
+    const email=this.loginForm.get('email').value
+    const password=this.loginForm.get('password').value
+    this.authservice.signInUser(email,password).then(
+      () =>{
+        this.router.navigate(['/home'])
+      },
+      (error) =>{
+        this.errorMessg=error
+      }
+    )
+
+  }
+
+
+
+
+
 
 }
